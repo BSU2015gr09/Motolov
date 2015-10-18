@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include<iostream>//написать программу решающие квадратное уравнение
 #include<clocale>
 #include<cmath>
 using namespace std;
