@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include<iostream>//Вводятся числа до первого отрицательного,выводится сумма чисел
 #include<clocale>
 using namespace std;
 int main(){
