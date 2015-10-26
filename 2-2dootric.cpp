@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include<iostream>//Вводятся числа до первого отрицательного,выводится сумма чисел
 #include<clocale>
 using namespace std;
 int main(){
@@ -7,10 +7,10 @@ int main(){
 	do{
 		cout << "введите число" << "\n";
 		cin >> num;
-		if (num > 0){
+		if (num > 0){ // Подумате как обойтись без этой проверки, ведь она дублирует while (num > 0); 
 			sum = sum + num;
 		}
-	} while (num > 0); 
-	cout << "—умма положительных чисел равана:" << sum;
+	} while (num > 0); //надо НЕотрицательных, а не положительных
+	cout << "сумма положительных чисел равана:" << sum;
 	return 0;
 }

@@ -1,4 +1,4 @@
-﻿#include<iostream>
+﻿#include<iostream>//Ввести целое число,вывести наибольшую цифру и на какой оно позиции
 #include<clocale>
 using namespace std;
 int main(){
