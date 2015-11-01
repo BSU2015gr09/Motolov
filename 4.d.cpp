@@ -7,11 +7,11 @@ void task2();
 void task3();
 const int N = 20;
 int main(){
-	cout << "first" << endl;
+	cout << "first is" << endl;
 	task1();
-	cout << "second" << endl;
+	cout << "second is" << endl;
 	task2();
-	cout << "third " << endl;
+	cout << "third is" << endl;
 	task3();
 
 	return 0;
@@ -54,14 +54,14 @@ void task2(){// вывод справо-налево
 void task3()//выывод по СПирали
 {
 	int A[N][N];
-	int a = 0, b, i = 0, p = 1;
+	int a=0, b, i=0, p=1;
 
 	while (a < N*N)
 	{
 		i++;
-		for (b = i - 1; b<N - i + 1; b++)
+		for (b=i- 1; b<N -i +1; b++)
 		{
-			A[i - 1][b] = p++;
+			A[i- 1][b]= p++;
 			a++;
 		}
 
@@ -71,27 +71,27 @@ void task3()//выывод по СПирали
 			a++;
 		}
 
-		for (b = N - i - 1; b >= i - 1; b--)
+		for (b =N- i-1; b>= i-1;b--)
 		{
-			A[N - i][b] = p++;
+			A[N- i][b]= p++;
 			a++;
 		}
 
-		for (b = N - i - 1; b >= i; b--)
+		for (b = N- i -1; b>= i; b--)
 		{
-			A[b][i - 1] = p++;
+			A[b][i- 1]= p++;
 			a++;
 		}
 
 	}
 
-	for (int a = 0; a<N; a++)
+	for (int a =0; a<N;a++)
 	{
-		for (int b = 0; b<N; b++)
+		for (int b= 0; b<N; b++)
 		{
-			cout << setw(4) << A[a][b];
+			cout<<setw(4)<<A[a][b];
 		}
-		cout << endl;
+		cout<< endl;
 	}
 
 	
