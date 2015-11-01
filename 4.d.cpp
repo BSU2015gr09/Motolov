@@ -1,4 +1,4 @@
-#include <iostream>//вывод массива
+п»ї#include <iostream>//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 #include<clocale>
 #include<iomanip>
 using namespace std;
@@ -15,7 +15,7 @@ int main(){
 	task3();
 
 	return 0;
-}void task1(){//вывод слево-направо
+}void task1(){//РІС‹РІРѕРґ СЃР»РµРІРѕ-РЅР°РїСЂР°РІРѕ
 
 	int A[N][N];
 	int a = 0, b = 0, cell = 1;
@@ -33,7 +33,7 @@ int main(){
 		cout << "\n";
 	}
 }
-void task2(){// вывод справо-налево
+void task2(){// РІС‹РІРѕРґ СЃРїСЂР°РІРѕ-РЅР°Р»РµРІРѕ
 
 	int A[N][N];
 	int a = 0, b = 0, cell = 3;
@@ -51,7 +51,7 @@ void task2(){// вывод справо-налево
 }
 
 
-void task3()//выывод по СПирали
+void task3()//РІС‹С‹РІРѕРґ РїРѕ вЂ”С•РёСЂР°Р»Рё
 {
 	int A[N][N];
 	int a = 0, b, i = 0, p = 1;
