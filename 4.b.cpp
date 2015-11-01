@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <iostream>//задание с массивом
 #include <ctime>
 #include<clocale>
 using namespace std;
