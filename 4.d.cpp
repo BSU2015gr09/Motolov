@@ -11,7 +11,7 @@ int main(){
 	task1();
 	cout << "second" << endl;
 	task2();
-	cout << "third" << endl;
+	cout << "third " << endl;
 	task3();
 
 	return 0;
