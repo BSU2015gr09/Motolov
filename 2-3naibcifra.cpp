@@ -1,30 +1,24 @@
-﻿#include<iostream>//Ввести целое число,вывести наибольшую цифру и на какой оно позиции
+﻿#include<iostream>
 #include<clocale>
-using namespace std;
+using std::cout;
+using std::cin;
+int max3(int n, int m, int p){
+	int result = n;
+	if (result < m){
+		result = m
+	}
+	if (result < p)
+	{
+		result = p;
+		retyrn result;
+	}
+}
 int main(){
 	setlocale(LC_ALL, "Russian");
-	int num = 0, s = 0, i = 1, max = 0,q=0,num1=0;
-	cin >> num;
-	num1 = num;
-	while (num > 0){
-		
-		s = num % 10;
-		if (max < s){
-			max = s;
-			
-        }
-		
-		num = num / 10;
-	}
-	cout << "Наибольшей цифрой данного числа является:" << max << "\n" << "данная цифра находится на " << " позиции слева: ";
-	while (num1 > 0){
-		q = num1 % 10;
-		if (q == max){
-			cout << i << ",";
-		}
-		i++;
-		num1 = num1 / 10;
-	}
-	
-	
+	int a = 0, b = 0, c = 0, max;
+	cin >> a >> b >> c;
+	rez = max3(a, b, c);
+	cout << "максимум=" << rez;
+
 }
+

@@ -2,22 +2,23 @@
 #include<clocale>
 using std::cout;
 using std::cin;
+max3(int,int,int)
 int main(){
 	setlocale(LC_ALL, "Russian");
-		int n=0;
-		int s = 0;
-		cout << "введи число"<<"\n";
-		cin >> n;
-		cout << "\n";
-		cout << "сумма цифр чисал равна " << "\n";
-		for (n; n>0; n = n/10)
-		{
+		int a=0,b=0,c=0,max;
+		cin >> a >> b >> c;
+		max = a;
+		if (a < b){
+			max = b;
 		
-			s =s + n %10;
-			
 		
-		}
-		cout << s;
-		cout << "\n";
+			if (b < c){
+				max = c;
+			}
+			else 
+			if (a < c){
+				c = max;
+			}
+			cout << max;
 		
 	}
