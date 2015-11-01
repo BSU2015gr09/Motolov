@@ -140,7 +140,7 @@ int main(){
 			cout << "-------" << endl;
 			break;
 		}
-		srand(time(0));
+		srand(time(0)); //лишнее, думаю каждый раз... Хотя. Не повредит ))))
 
 		i = rand() % 7 + 1;
 		c = c + i;
@@ -192,7 +192,7 @@ int main(){
 		cin >> ac;
 		switch (ac){
 		case 'y':break;
-		case'n':goto loop;
+		case'n':goto loop; // супер!
 			break;
 		}
 		

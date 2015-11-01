@@ -10,7 +10,7 @@ int main()
 	setlocale(LC_ALL, "Russian");
 
 	int i, q = 0;
-	double array[40], pr = 0, ne = 0;
+	double array[40], pr = 0, ne = 0; // А зачем нам массив????? Хранить достаточно 2 члена последовательности!!!!
 	array[0] = 0;
 	array[1] = 1;
 	cout << "   |                           ќтношение членов ‘ибоначчи                |" << endl;
