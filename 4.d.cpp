@@ -1,4 +1,4 @@
-#include <iostream>//вывод массива
+#include <iostream>//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 #include<clocale>
 using namespace std;
 void task1();
@@ -9,7 +9,7 @@ int main(){
 	task1( );
 	task2();
 	return 0;
-}void task1(){//Слево-направо
+}void task1(){//РІС‹РІРѕРґ СЃР»РµРІРѕ-РЅР°РїСЂР°РІРѕ
 	
 	int A[N][N];
 	int a=0, b=0, cell = 1;
@@ -27,7 +27,7 @@ int main(){
 		cout << "\n";
 	}
 }
-void task2(){//слева-напрво
+void task2(){// РІС‹РІРѕРґ СЃРїСЂР°РІРѕ-РЅР°Р»РµРІРѕ
 	
 	int A[N][N];
 	int a=0, b=0, cell = 3;
