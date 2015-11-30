@@ -1,0 +1,41 @@
+//Есть  ли число в  массиве
+#include <iostream>
+using namespace std;
+
+void initialisation(int a[], int N){
+	for (int i = 0; i < N; i++){
+		a[i] = rand() % 10;
+	}
+}
+int searchnum(int a[], int N, int guessnum, int i){
+	for (; i < N; i++){
+		if (guessnum == a[i]){
+			return i;
+		}
+
+	}
+	return -1;
+
+}
+void guess(int a[], int N){
+	int i = 0;
+	int guessnum = 0;
+	cout << "Введите число " << endl;
+	cin >> guessnum;
+	i = searchnum(a, N, guessnum, i);
+	if (i != (-1)){
+		cout << "Это число есть массиве под индексом" << i;
+	}
+	else
+		cout << "Таких чисел нет";
+
+}
+int main(){
+	setlocale(LC_ALL, "Russian");
+	const int N = 10;
+	int a[N];
+	initialisation(a, N);
+	guess(a, N);
+	
+
+}
