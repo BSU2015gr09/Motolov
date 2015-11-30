@@ -1,0 +1,91 @@
+//d) 
+#include <iostream>
+using namespace std;
+void sizearray(int & s, int N)
+{
+	cout << "введите размер масcива меньший чем " << N << endl;
+	cin >> s;
+}
+
+void initialisation(int a[], int s)
+{
+	int i = 0;
+	for (; i<s; i++){
+		a[i] = 1+i;
+	}
+}
+void initialisationnext(int a[],int s,int j){
+	int i = 0;
+	for (; i<s-2; i++){
+		a[i] = 1 + i;
+	}
+	a[s - 1] = j;
+}
+void outputarray(int a[], int s)
+{
+	for (int i = 0; i<s; i++){
+		cout << i << ":" << a[i] << endl;
+	}
+
+}
+int searchnum(int a[], int s, int guessnum, int i){
+	for (; i < s; i++){
+		if (guessnum == a[i]){
+			return i;
+		}
+
+	}
+	return -1;
+
+}
+void guess(int a[], int s,int &del){
+	int i = 0;
+	int guessnum = 0;
+	cout << "Введите число  которое хотите удалить" << endl;
+	cin >> guessnum;
+	i = searchnum(a, s, guessnum, i);
+	if (i != (-1)){
+		del = i;
+	}
+	else
+		cout << "Таких чисел нет";
+
+
+}
+
+void addlastelement(int a[], int &s,int &j)
+{
+	s = s + 1;
+	
+	cout << "введите  элемент для добавления  " << endl;
+	cin >> j;
+	
+	
+}
+void deleted(int a[],int &s, int del){
+	for (int i=del ;i<s;i++){
+		a[i] = a[i + 1];
+	}
+	s=s-1;
+}
+
+int main()
+{
+
+	setlocale(LC_ALL, "Russian");
+	const int N = 100;
+	int a[N];
+	int s = 0;
+	int del = 0;
+	int j = 0;
+	sizearray(s, N);
+	initialisation(a, s);
+	outputarray(a, s);
+	addlastelement(a, s,j);
+	initialisationnext(a, s, j);
+	outputarray(a, s);
+	guess(a, s,del);
+	deleted(a, s,del);
+	outputarray(a, s);
+
+}
