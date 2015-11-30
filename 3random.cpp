@@ -5,16 +5,21 @@ using std::cin;
 using std::cout;
 int main()
 {
-	long int a = 4096, c = 150889, m = 714025;
-	long int i = 1;
-	int mas[10]; // Зачем массив?????
-	mas[0] = 1;
-	cout << " 1 : " << mas[0] << "\n";
-	while (i<11)
+	int i = 2 int n;
+	cin >> n;
+	while (n != 1)
 	{
-		mas[i] = (a*mas[i - 1] + c) % m;
-		cout << std::setw(2) << i + 1 << " : " << mas[i] << "\n";
-		i++;
+		if (i*i > n)
+			i = n;
+		while (n % i != 0)
+			i++;
+		while (n % i == 0)
+			n /= i;
+		std::cout << i << "\n";
+	}
+	return 0;
+}
+	
 	}
 	system("pause");
 }

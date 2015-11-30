@@ -1,138 +1,101 @@
-﻿#include <iostream>
+﻿#include <iostream>//вывод массива
 
-#include <clocale>
+#include <iostream>//вывод массива
 
-#include <iomanip>
-
+#include<clocale>
+#include<iomanip>
 using namespace std;
-
-// я не понял кода... Как работатет калькулятор так и не разобрался ((((
+void task1();
+void task2();
+void task3();
+const int N = 20;
 int main(){
+	cout << "first" << endl;
+	task1();
+	cout << "second" << endl;
+	task2();
+	cout << "third" << endl;
+	task3();
 
-	setlocale(LC_ALL, "Russian");
+	return 0;
+}void task1(){//вывод слево-направо
 
-	double a=0,b=0,c=0,d=0,i=0;
-	char ch,pr;
-	
-	cout << "вводите"<<endl;
-	
-	while (d != 2){
-		switch (pr){
-		case '=':
-			cout << "=" << c << endl;
-			cout << "результат" << "\n";
-			break;
-		default:;
-		}
-		
-		cin >> a;
-		//cout << "введите действие" << endl;
-		cin >> ch;
-		switch (ch){
-		case '=':
-			cout << "=" << c << endl;
-			cout << "результат" << "\n";
-			break;
-<<<<<<< HEAD
-		default:;
-		}
-		if (i < 1){
-			cin >> b;
-			//cout << "ВВедите второе число" << endl;
-			switch (ch){
-			case '+':c = a + b;
-				//cout << a << ch << b;
-				break;
-			case '-':c = a - b;
-				//cout << a << ch << b;
-				break;
-			case '*':c = a * b;
-				//cout << a << ch << b;
-				break;
-			case '/':
-				while (b = 0){
-					cout << "На ноль делить нельзя введите друное значение числа чтобы продолжить" << endl;
-					cin >> b;
-				}
-				c = a / b;
-				//cout << a << ch << b;
-=======
-		case '/':
-			while (b = 0){//Опять ОШИБКА тут!!!! Внимание!!!!!!
-				cout << "На ноль делить нельзя введите друное значение числа чтобы продолжить" << endl;
-				cin >> b;
-			}
-			c = a / b;
-			//cout << a << ch << b;
->>>>>>> 10ae96c92b56209ba8ad9cad30453ec425c38b86
-
-				break;
-			case 'c':
-
-				break;
-			case 'e': d = 2;
-				goto loop;
-				break;
-			case '=':cout << "=" << c << endl;
-				cout << "результат";
-				continue;
-				d = 2;
+	int A[N][N];
+	int a = 0, b = 0, cell = 1;
+	for (; a < 20; a++){
+		for (int i = 0; i < 3; b++, i++){
+			A[a][b] = cell;
+			if (cell == 60){
+				cout << A[a][b] << ".";
 				break;
 			}
-			i++;
-
-			cin >> ch;
-			switch (ch){
-			case '=':
-				cout << "=" << c << endl;
-				cout << "результат" << "\n";
-				break;
-				continue;
-			default:;
-			}
-		}
-		cin >> ch;
-		switch (ch){
-		case '=':
-			cout << "=" << c << endl;
-			cout << "результат" << "\n";
-			break;
-		default:;
-		}
-		cin >> a;
-
-
-		switch (ch){
-
-		case '+':c = c + a;
-			cout << ch << a;
-			break;
-		case '-':c = c - a;
-			cout << ch << a;
-			break;
-		case '*':c = c*a;
-			cout << ch << a;
-
-			break;
-		case '/':while (a = 0){{//Опять ОШИБКА тут!!!! Внимание!!!!!!
-					 cout << "На ноль делить нельзя введите друное значение числа чтобы продолжить" << endl;
-					 cin >> b;
-		}
-				 c = c / a;
-				 cout << ch << a;
-				 break;
-		case 'c':d = 1;
-
-
-			break;
-		case 'e': d = 2;
-			goto loop;
-			break;
+			cout << A[a][b] << ",";
+			cell++;
 
 		}
-		pr = ch;
+		cout << "\n";
 	}
-loop:;
-	
+}
+void task2(){// вывод справо-налево
+
+	int A[N][N];
+	int a = 0, b = 0, cell = 3;
+	for (; a < 20; a++){
+		for (int i = 0, b = 0; b < 3, i < 3; b++, i++){
+			A[a][b] = cell;
+
+			cout << A[a][b] << ",";
+			cell--;
+
+		}
+		cell += 6;
+		cout << "\n";
+	}
 }
 
+
+void task3()//выывод по —ѕирали
+{
+	int A[N][N];
+	int a = 0, b, i = 0, p = 1;
+
+	while (a < N*N)
+	{
+		i++;
+		for (b = i - 1; b<N - i + 1; b++)
+		{
+			A[i - 1][b] = p++;
+			a++;
+		}
+
+		for (b = i; b<N - i + 1; b++)
+		{
+			A[b][N - i] = p++;
+			a++;
+		}
+
+		for (b = N - i - 1; b >= i - 1; b--)
+		{
+			A[N - i][b] = p++;
+			a++;
+		}
+
+		for (b = N - i - 1; b >= i; b--)
+		{
+			A[b][i - 1] = p++;
+			a++;
+		}
+
+	}
+
+	for (int a = 0; a<N; a++)
+	{
+		for (int b = 0; b<N; b++)
+		{
+			cout << setw(4) << A[a][b];
+		}
+		cout << endl;
+	}
+
+
+}

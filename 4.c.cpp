@@ -13,13 +13,13 @@ int maxfunc(int i);
 int i = 0,max=0,min=0;
 int main(){
 	setlocale(LC_ALL, "Russian");
-	cout << "Èíèöèàëèçèðóåì ìàññèâ"<<endl;
+	cout << "Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÐ¼ Ð¼Ð°ÑÑÐ¸Ð² "<<endl;
 	actionarray();
-	cout << "Âñòàâèì ïîñëå 0, 999"<<endl;
+	cout << "Ð’ÑÑ‚Ð°Ð²Ð¸Ð¼ Ð¿Ð¾ÑÐ»Ðµ 0, 999"<<endl;
 	after0();
-	cout << "Âñòàâèì 111 ïîñë min"<<endl;
+	cout << "Ð’ÑÑ‚Ð°Ð²Ð¸Ð¼  111 Ð¿Ð¾ÑÐ»Ðµ min"<<endl;
 	aftermin();
-	cout << "Âñòàâèì 222 ïåðåä max"<<endl;
+	cout << "Ð’ÑÑ‚Ð°Ð²Ð¸Ð¼  222 Ð¿ÐµÑ€ÐµÐ´ max"<<endl;
 	beforemax();
 	return 0;
 }

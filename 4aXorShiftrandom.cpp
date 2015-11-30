@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include <iostream>//xorshift рандом
 using std::cout;
 int xorshift(int x){
 	int tmp = 0, c = 4, b = 35, a = 21;;
