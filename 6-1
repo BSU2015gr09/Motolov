@@ -1,0 +1,78 @@
+//Дописать программу, которая реализует стек целых чисел на массиве (функции push, pop и дополнительную функцию с именем view, которая
+//печатает элемент, находящийся в вершине стека).
+//Внутри main выполнить по очереди следующие 14 действий:
+
+#include <iostream> 
+#include <clocale> 
+#include <iomanip> 
+using namespace std;
+const int maxsize = 3;
+
+void push(int a[], int &top)
+{
+	cout << "Введите элемент стека" << endl;
+	int elem;
+	cin >> elem;
+	a[top] = elem;
+	cout << "--------" << top << ":" << a[top] << "------------" << endl;
+	top++;
+}
+
+	void view(int a[],int top){
+		cout << "Вершина стека" << a[top-1]<<endl;
+	}
+	void showelem(int a[],int top)
+	{
+		for (int i = 0; i < top; i++)
+		{
+			cout << i << ":" << a[i] << endl;
+		}
+	}
+
+	void quantity(int a[], int top){
+		cout << "Колличество элементов в стеке:" << top<<endl;
+	}
+	void pop(int a[], int &top)
+	{
+		cout << endl << "Сколько элементов вывести" << endl;
+		int element;
+		cin >> element;
+		if ( top>0)
+		{
+		 top -= element;
+
+		}
+		else
+			cout <<endl<< "В стеке нет элементов";
+	}
+	void showhead(int a[], int top){
+		
+		cout << "удаленный элемент" << a[top]<<endl;
+	}
+	int main(){
+		setlocale(LC_ALL, "Russian");
+	
+		int a[maxsize];
+		int top = 0;
+			push(a, top);
+			push(a, top);
+			push(a, top);
+		view(a, top);
+		showelem(a,top);
+		quantity(a, top);
+		pop(a, top);
+		showelem(a, top);
+		showhead(a, top);
+		quantity(a, top);
+		pop(a, top);
+		showhead(a,top);
+		quantity(a, top);
+		pop(a, top);
+		showhead(a, top);
+		quantity(a, top);
+		pop(a, top);
+		push(a, top);
+		quantity(a, top);
+	// достать из головы массива (a[0] - голова) 
+}
+
