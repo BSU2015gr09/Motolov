@@ -1,0 +1,62 @@
+//в) В программе объявлен массив А элементов типа char (размер массива 20).
+//Пользователь вводит массив c клавиатуры. Затем ищем в массиве какая буква встречается чаще всего. Ее выводим на экран.
+
+#include <iostream> 
+#include <clocale> 
+#include <iomanip> 
+using namespace std;
+const int maxsize = 20;
+void push(char a[], int &top)
+{
+	cout << "Введите элемент массива" << endl;
+	char elem;
+	cin >> elem;
+	a[top] = elem;
+
+	top++;
+}
+
+void showelem(char a[], int top)
+{
+	for (int i = 0; i < top; i++)
+	{
+		cout <<  a[i] << endl;
+	}
+}
+void mostrepeat(char a[],int top)
+{
+	int q=0,max=0,per=0,i=0;
+	char k = 't';;
+	for (; i < top; i++)
+	{
+		
+			for (; q < top; q++)
+			{
+				if (a[i] = a[q])
+				{
+					max++;
+				}
+				
+			}
+			if (per <= max)
+			{
+				per = max;
+				k = a[i];
+				
+			}
+		}
+	cout << "саммая встречающийся символ:" << k<<endl;
+	}
+
+int main(){
+	setlocale(LC_ALL, "Russian");
+	char a[maxsize];
+	int top = 0;
+	push(a, top);
+	push(a, top);
+	push(a, top);
+	showelem(a, top);
+	mostrepeat(a, top);
+	system("pause");
+}
+
