@@ -47,7 +47,6 @@ int main(){
 	showelem(a, top,k);
 	pasteelement(a, top,k);
 	showelem(a, top,k);
-	cout << "ekek";
 	system("pause");
 }
 
