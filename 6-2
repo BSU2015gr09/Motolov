@@ -1,0 +1,53 @@
+//б) В программе объявлен массив А целых элементов (размер массива 10). Пользователь вводит массив c клавиатуры.
+//Потом распечатываем массив. Вводим число N < 10. Затем удаляем N-ый элемент массива (сдвигая остальные элементы).
+
+#include <iostream> 
+#include <clocale> 
+#include <iomanip> 
+using namespace std;
+const int maxsize = 3;
+void push(int a[], int &top)
+{
+  cout << "Введите элемент стека" << endl;
+	int elem;
+	cin >> elem;
+	a[top] = elem;
+    top++;
+}
+
+void showelem(int a[], int top,int k)
+{
+	for (int i = 0; i < top-k; i++)
+	{
+		cout << i << ":" << a[i] << endl;
+	}
+}
+void pasteelement(int a[], int &top,int &k)
+{
+	cout << "Введите число от 0 до  N которыйй хотите удалить" << endl;
+	int elem;
+	cin >> elem;
+
+	for (; elem < top - 1; elem++)
+	{
+		a[elem] = a[elem + 1];
+	}
+	k++;
+
+	
+}
+
+int main(){
+	setlocale(LC_ALL, "Russian");
+    int a[maxsize];
+	int top = 0, k = 0;
+	push(a, top);
+	push(a, top);
+	push(a, top);
+	showelem(a, top,k);
+	pasteelement(a, top,k);
+	showelem(a, top,k);
+	cout << "ekek";
+	system("pause");
+}
+
