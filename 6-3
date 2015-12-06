@@ -5,7 +5,7 @@
 #include <clocale> 
 #include <iomanip> 
 using namespace std;
-const int maxsize = 10;
+const int maxsize = 20;
 void push(char a[], int &top)
 {
 	cout << "Введите элемент массива" << endl;
@@ -53,7 +53,7 @@ int main(){
 	setlocale(LC_ALL, "Russian");
 	char a[maxsize];
 	int top = 0, k = 0;
-	while (k != 10){
+	while (k != 20){
 		push(a, top);
 		k++;
 	}
