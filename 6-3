@@ -30,6 +30,7 @@ void mostrepeat(char a[], int top)
 	for (; i < top; i++)
 	{
 		max = 0;
+		q=0;
 		for (; q < top; q++)
 		{
 			if (a[i] ==a[q])
