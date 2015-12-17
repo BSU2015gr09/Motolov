@@ -8,7 +8,7 @@ using namespace std;
 const int maxsize = 3;
 void push(int a[], int &top)
 {
-  cout << "Введите элемент стека" << endl;
+  cout << "Введите элемент стека" << endl;// причем тут стек????????????????????
 	int elem;
 	cin >> elem;
 	a[top] = elem;
@@ -22,13 +22,13 @@ void showelem(int a[], int top,int k)
 		cout << i << ":" << a[i] << endl;
 	}
 }
-void pasteelement(int a[], int &top,int &k)
+void pasteelement(int a[], int &top,int &k)// странное имя ф-ции. Мы же не вставляем, а удалаем!!!!
 {
 	cout << "Введите число от 0 до  N которыйй хотите удалить" << endl;
 	int elem;
 	cin >> elem;
 
-	for (; elem < top - 1; elem++)
+	for (/*почему тут ничего нет??? */; elem < top - 1; elem++)
 	{
 		a[elem] = a[elem + 1];
 	}
