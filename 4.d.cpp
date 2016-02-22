@@ -1,18 +1,12 @@
-
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-
 int main(){
-	int N = 8, i = 0, c = 0;
-	int A[8];
+	int *p = nullptr;
+	int b = 5, b, c;
+	int a[100] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	cout << a;
 
-	for (; N < 8; i++){
 
-		cin >> A[i];
-		if (A[i]>0)c = c + A[i];
 
-	}
-	cout << "\n" << c;
+	system("pause");
 }
-

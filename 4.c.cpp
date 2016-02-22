@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include<clocale>
 using namespace std;
 int XorShift(int x);
@@ -13,13 +13,13 @@ int maxfunc(int i);
 int i = 0,max=0,min=0;
 int main(){
 	setlocale(LC_ALL, "Russian");
-	cout << "Инициализируем массив "<<endl;
+	cout << "Инициализируем массив"<<endl;
 	actionarray();
 	cout << "Вставим после 0, 999"<<endl;
 	after0();
-	cout << "Вставим  111 после min"<<endl;
+	cout << "Вставим 111 посл min"<<endl;
 	aftermin();
-	cout << "Вставим  222 перед max"<<endl;
+	cout << "Вставим 222 перед max"<<endl;
 	beforemax();
 	return 0;
 }

@@ -1,6 +1,5 @@
-﻿#include <iostream>
-#include <clocale>
-
+﻿//
+#include <iostream>
 using namespace std;
 
 void initialisation(int a[], int N){ 
