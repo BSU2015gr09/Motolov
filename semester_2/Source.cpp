@@ -1,5 +1,5 @@
-//63.(8)Даны массивы А(N) и В(M).Удалить из массива А(N) элементы, которые являются повторяющимися в массиве В(M).Вывести сообщение “Нет”,
-//если требуемых элементов нет.
+//63.(8-9)Р”Р°РЅС‹ РјР°СЃСЃРёРІС‹ Рђ(N) Рё Р’(M).РЈРґР°Р»РёС‚СЊ РёР· РјР°СЃСЃРёРІР° Рђ(N) СЌР»РµРјРµРЅС‚С‹, РєРѕС‚РѕСЂС‹Рµ СЏРІР»СЏСЋС‚СЃСЏ РїРѕРІС‚РѕСЂСЏСЋС‰РёРјРёСЃСЏ РІ РјР°СЃСЃРёРІРµ Р’(M).Р’С‹РІРµСЃС‚Рё СЃРѕРѕР±С‰РµРЅРёРµ вЂњРќРµС‚вЂќ,
+//РµСЃР»Рё С‚СЂРµР±СѓРµРјС‹С… СЌР»РµРјРµРЅС‚РѕРІ РЅРµС‚.
 #include <iostream>
 #include <cstdlib>
 #include<ctime>
@@ -36,14 +36,14 @@ int initialisation(char array[], int n, char array1[], int n1){
 	return 0;
 }
 int output(char array[], int n, char array1[], int n1){
-	cout << endl << "первая строка" << endl;
+	cout << endl << "ГЇГҐГ°ГўГ Гї Г±ГІГ°Г®ГЄГ " << endl;
 	while (*array){
 
 		cout << *(array);
 		array++;
 
 	}
-	cout << endl << "вторая строка" << endl;
+	cout << endl << "ГўГІГ®Г°Г Гї Г±ГІГ°Г®ГЄГ " << endl;
 	while (*array1){
 
 		cout << *(array1);
@@ -69,7 +69,7 @@ int change(char array[], int n, char array1[], int n1)
 					if (*(array1 + k) == *(array + i))
 					{
 					    flag = 1;
-						cout << "Этот символ есть в второй строке" << endl;
+						cout << "ГќГІГ®ГІ Г±ГЁГ¬ГўГ®Г« ГҐГ±ГІГј Гў ГўГІГ®Г°Г®Г© Г±ГІГ°Г®ГЄГҐ" << endl;
 						for (int d = k; d < n1; d++)
 						{
 						*(array1 + d) = *(array1 + (d + 1));
@@ -83,7 +83,7 @@ int change(char array[], int n, char array1[], int n1)
 				}
 			if (flag == 0)
 			{
-					cout<< "Этого символа нет во второй строке" << endl;
+					cout<< "ГќГІГ®ГЈГ® Г±ГЁГ¬ГўГ®Г«Г  Г­ГҐГІ ГўГ® ГўГІГ®Г°Г®Г© Г±ГІГ°Г®ГЄГҐ" << endl;
 			}
 				break;
 			}
@@ -96,14 +96,14 @@ int change(char array[], int n, char array1[], int n1)
 int main(){
 	setlocale(LC_ALL, "Russian");
 	int n = 0, n1 = 0;
-	cout << "Введите размер первой строки:" << endl;
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° ГЇГҐГ°ГўГ®Г© Г±ГІГ°Г®ГЄГЁ:" << endl;
 	cin >> n;
 	n += 1;
-	char *array = new char[n];//первый массив
-	cout << "Введите размер второй строки:" << endl;
+	char *array = new char[n];//ГЇГҐГ°ГўГ»Г© Г¬Г Г±Г±ГЁГў
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° ГўГІГ®Г°Г®Г© Г±ГІГ°Г®ГЄГЁ:" << endl;
 	cin >> n1;
 	n1 += 1;
-	char *array1 = new char[n];//второй массив
+	char *array1 = new char[n];//ГўГІГ®Г°Г®Г© Г¬Г Г±Г±ГЁГў
 	initialisation(array, n, array1, n1);
 	output(array, n, array1, n1);
 	change(array, n, array1, n1);
