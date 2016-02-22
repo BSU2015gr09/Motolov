@@ -1,0 +1,54 @@
+//г) В программе объявлен массив А элементов типа char (размер массива 20). Пользователь вводит массив c клавиатуры.
+//Затем заменяем последнюю встреченную в массиве букву Z на букву F
+ 
+#include <iostream> 
+#include <clocale> 
+#include <iomanip> 
+using namespace std;
+const int maxsize = 20;
+void push(char a[], int &top)
+{
+	cout << "Введите элемент стека" << endl;
+	char elem;
+	cin >> elem;
+	a[top] = elem;
+	top++;
+}
+
+void showelem(char a[], int top)
+{
+	for (int i = 0; i < top; i++)
+	{
+		cout << a[i] << endl;
+	}
+
+
+}
+void lastf(char a[], int top)
+{
+	top -= 1;
+	for (; top>0; top--)
+	{
+		if (a[top] == 'Z')
+		{
+			a[top] = 'F';
+			break;
+
+		}
+	}
+}
+int main(){
+	setlocale(LC_ALL, "Russian");
+  char a[maxsize];
+	int top = 0, k = 0;
+	while (k != 20){
+		push(a, top);
+		k++;
+	}
+	showelem(a, top);
+	lastf(a, top);
+	cout << "Новый массив" << endl;
+	showelem(a, top);
+	system("pause");
+}
+
