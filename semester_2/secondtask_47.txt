@@ -1,0 +1,152 @@
+﻿47.*(9) Элементы массива А(N), значения которых – простые числа, расположить в порядке возрастания,
+не нарушая порядка следования других элементов.
+#include<iostream>
+#include<stdlib.h>
+#include<ctime>
+#include<cmath>
+using namespace std;
+void sort(int* array, int end, int *primearray)//quicksort
+{
+	int size = end;
+	int b = 0;
+	int m = *(array + *(primearray + (int)((size / 2))));
+	do{
+		while (*(array + (*(primearray + b))) < m)
+			b++;
+
+		while (*(array + (*(primearray + end)))>m)
+			end--;
+		if (b <= end){
+			swap(*(array + (*(primearray + end))), *(array + (*(primearray + b))));
+			b++;
+			end--;
+		}
+	} while (b <= end);
+	if (end > 0)
+	{
+		sort(array, end, primearray);
+	}
+	if (size > b){
+		sort(array, size - b, primearray + b);
+	}
+
+}
+void printsortarray(int* array, int lastinprimearray, int* primearray, int size){
+
+
+	sort(array, lastinprimearray, primearray);
+	for (int i = 0; i <size; i++){
+		cout << *(array + i) << "   ";
+	}
+
+}
+void printarray(int* array, int size)
+{
+	for (int i = 0; i <size; i++){
+		cout << *(array + i) << "   ";
+	}
+}
+void printarrayoptions(int* array, int lastinprimearray, int* primearray, int size)
+{
+	cout << "_____________________________________________________________________" << endl;
+	cout << "|                  Выберете варианты вывода массива                 |" << endl;
+	cout << "|   1) Нажмите 1 для выода не отсоритрованного массива              |" << endl;
+	cout << "|   2) Нажмите 2 для вывода отсортированого массива                 |" << endl;
+	cout << "|___________________________________________________________________|" << endl;
+	int num = 0;
+	cin >> num;
+	switch (num)
+	{
+	case 1: printarray(array, size);
+		break;
+	case 2: printsortarray(array, lastinprimearray, primearray, size);
+		break;
+	default:cout << "Таой команды нет поробуйте ещё" << endl;
+		printarrayoptions(array, lastinprimearray, primearray, size);
+		break;
+	}
+
+}
+void intializationarraykeyboard(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cin >> *(array + i);
+	}
+}
+void intializationarrayrand(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		*(array + i) = (rand() % 100) - 50;
+	}
+}
+
+void primenumber(int* array, int &lastinprimearray, int* primearray, int size)
+{
+	int fl = 0;
+	int num = 0;
+	for (int i = 0; i < size; i++)
+	{
+		fl = 0;
+		if ((*(array + i) != 1) && (*(array + i) != 0) && (*(array + i) != (-1)))
+		{
+			for (int q = 1; (q < abs(*(array + i))); q++)
+			{
+				if ((*(array + i) % (q + 1)) == 0)
+					fl++;
+
+			}
+
+			if (fl == 1)
+			{
+				*(primearray + num) = i;
+				++num;
+			}
+		}
+	}
+	lastinprimearray = (num - 1);
+}
+void enterarrayoptions(int &size, int* array)
+{
+	int num;
+	cout << "Нажмите клавишу Enter для начала работы " << endl;
+	cin.get();
+	cout << "Введите размер массива " << endl;
+	cin >> size;
+	if (size <= 0)
+	{
+		cout << "введите число большое либо равное 0" << endl;
+		enterarrayoptions(size, array);
+	}
+	cout << "_____________________________________________________________________" << endl;
+	cout << "|                  Выберете манипуляцию с массивом                  |" << endl;
+	cout << "|   1) Нажмите 1 для инцеализации массива с помощью функции rand()  |" << endl;
+	cout << "|   2) Нажмите 2 для инцеализации массива с помощью клавиатуры      |" << endl;
+	cout << "|___________________________________________________________________|" << endl;
+	cin >> num;
+	switch (num)
+	{
+	case 1: intializationarrayrand(array, size);
+		break;
+	case 2: intializationarraykeyboard(array, size);
+		break;
+	default:cout << "Таой команды нет поробуйте ещё" << endl;
+		enterarrayoptions(size, array);
+		break;
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int size = 0;
+	srand(time(0));
+	int lastinprimearray = 0;
+	int* const array = new int[];
+	int* const primearray = new int[];
+	enterarrayoptions(size, array);
+	primenumber(array, lastinprimearray, primearray, size);
+	printarrayoptions(array, lastinprimearray, primearray, size);
+	//system("pause");
+}
