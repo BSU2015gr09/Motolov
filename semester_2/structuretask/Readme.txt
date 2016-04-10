@@ -1,0 +1,1 @@
+This programm allows you change available 1)telephhone book, and also create second empty 2)telephone book. WARNING!!! this telephone books show only ten last persons added in book"
