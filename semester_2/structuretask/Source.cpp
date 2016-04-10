@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -17,16 +17,16 @@ struct data{
 void displaydefault(){
 	char buff[50];
 	ifstream fin("default.txt");
-	if (!fin.is_open()) // если файл не открыт
+	if (!fin.is_open()) // РµСЃР»Рё С„Р°Р№Р» РЅРµ РѕС‚РєСЂС‹С‚
 	{
-		cout << "Файл не может быть открыт!\n";
-	}// сообщить об этом
+		cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
+	}// СЃРѕРѕР±С‰РёС‚СЊ РѕР± СЌС‚РѕРј
 	else
 	{
 		for (int i = 0; i < N; i++){
 			if (i == 0){
 
-				cout << "Номер"  << "           Имя"  << "     Фамилия" << endl;
+				cout << "РќРѕРјРµСЂ"  << "           РРјСЏ"  << "     Р¤Р°РјРёР»РёСЏ" << endl;
 
 				i = 0;
 			}
@@ -37,7 +37,7 @@ void displaydefault(){
 			fin >> buff;
 			cout << buff << endl;
 		}
-		fin.close(); // закрываем файл
+		fin.close(); // Р·Р°РєСЂС‹РІР°РµРј С„Р°Р№Р»
 	}
 }
 void displayset(){
@@ -45,14 +45,14 @@ void displayset(){
 	ifstream fin("set.txt");
 	if (!fin.is_open())
 	{
-		cout << "Файл не может быть открыт!\n";
-	}// сообщить об этом
+		cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
+	}// СЃРѕРѕР±С‰РёС‚СЊ РѕР± СЌС‚РѕРј
 	else
 	{
 		for (int i = 0; i < N; i++){
 			if (i == 0){
 
-				cout << "Номер       "<< "Имя       " << "Фамилия" << endl;
+				cout << "РќРѕРјРµСЂ       "<< "РРјСЏ       " << "Р¤Р°РјРёР»РёСЏ" << endl;
 
 				i = 0;
 			}
@@ -73,11 +73,11 @@ void createbook(){
 	/*char name[20];
 	cin >> name;
 	opportynity named file*/
-	ofstream fout("set.txt", ios_base::app); // открываем файл для добавления информации к концу файла
+	ofstream fout("set.txt", ios_base::app); // РѕС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рє РєРѕРЅС†Сѓ С„Р°Р№Р»Р°
 	int num = 0;
 
 	for (int i = 0; i < 1; i++){
-		cout << "ВВедите телефонный номер/n";
+		cout << "Р’Р’РµРґРёС‚Рµ С‚РµР»РµС„РѕРЅРЅС‹Р№ РЅРѕРјРµСЂ/n";
 
 		char tmp[255];
 		cin >> tmp;
@@ -87,7 +87,7 @@ void createbook(){
 
 			}
 			else{
-				cout << "ВВодите только цифры" << endl;
+				cout << "Р’Р’РѕРґРёС‚Рµ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹" << endl;
 				createbook();
 			}
 		}
@@ -95,13 +95,13 @@ void createbook(){
 		strcpy(telephonebook[i].number, tmp);
 		strcat(telephonebook[i].number, " ");
 		fout << telephonebook[i].number;
-		cout << "ВВедите имя /n";
+		cout << "Р’Р’РµРґРёС‚Рµ РёРјСЏ /n";
 		cin >> tmp;
 		telephonebook[i].name = new char[100];
 		strcpy(telephonebook[i].name, tmp);
 		strcat(telephonebook[i].name, " ");
 		fout << telephonebook[i].name;
-		cout << "ВВедите фамилию /n";
+		cout << "Р’Р’РµРґРёС‚Рµ С„Р°РјРёР»РёСЋ /n";
 		cin >> tmp;
 		telephonebook[i].surname = new char[100];
 		strcpy(telephonebook[i].surname, tmp);
@@ -116,12 +116,12 @@ void createbook(){
 }
 void addinfo(){
 
-	ofstream fout("default.txt", ios_base::app); // открываем файл для добавления информации к концу файла
+	ofstream fout("default.txt", ios_base::app); // РѕС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рє РєРѕРЅС†Сѓ С„Р°Р№Р»Р°
 
 	int num = 0;
 
 	for (int i = 0; i < 1; i++){
-		cout << "ВВедите телефонный номер/n";
+		cout << "Р’Р’РµРґРёС‚Рµ С‚РµР»РµС„РѕРЅРЅС‹Р№ РЅРѕРјРµСЂ/n";
 		char tmp[255];
 		cin >> tmp;
 
@@ -130,7 +130,7 @@ void addinfo(){
 
 			}
 			else{
-				cout << "ВВодите только цифры" << endl;
+				cout << "Р’Р’РѕРґРёС‚Рµ С‚РѕР»СЊРєРѕ С†РёС„СЂС‹" << endl;
 				createbook();
 			}
 		}
@@ -138,13 +138,13 @@ void addinfo(){
 		strcpy(telephonebook[i].number, tmp);
 		strcat(telephonebook[i].number, " ");
 		fout << telephonebook[i].number;
-		cout << "ВВедите имя /n";
+		cout << "Р’Р’РµРґРёС‚Рµ РёРјСЏ /n";
 		cin >> tmp;
 		telephonebook[i].name = new char[100];
 		strcpy(telephonebook[i].name, tmp);
 		strcat(telephonebook[i].name, " ");
 		fout << telephonebook[i].name;
-		cout << "ВВедите фамилию /n";
+		cout << "Р’Р’РµРґРёС‚Рµ С„Р°РјРёР»РёСЋ /n";
 		cin >> tmp;
 		telephonebook[i].surname = new char[100];
 		strcpy(telephonebook[i].surname, tmp);
@@ -163,7 +163,7 @@ void firstformatting(){
 	ofstream fout("default.txt", ios_base::trunc);
 	if (!fout.is_open())
 	{
-		cout << "Файл не может быть открыт!\n";
+		cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
 		//menu();
 	}
 }
@@ -171,14 +171,14 @@ void secondformatting(){
 	ofstream fout("set.txt", ios_base::trunc);
 	if (!fout.is_open())
 	{
-		cout << "Файл не может быть открыт!\n";
+		cout << "Р¤Р°Р№Р» РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚РєСЂС‹С‚!\n";
 		//menu();
 	}
 }
 void formatting(){
-	cout << "Для очистки изначальной книги нажмите 1 " << endl;
-	cout << "Для очистки новой  книги нажмите 2 " << endl;
-	//cout << "Для возврата в меню нажмите 3 " << endl;
+	cout << "Р”Р»СЏ РѕС‡РёСЃС‚РєРё РёР·РЅР°С‡Р°Р»СЊРЅРѕР№ РєРЅРёРіРё РЅР°Р¶РјРёС‚Рµ 1 " << endl;
+	cout << "Р”Р»СЏ РѕС‡РёСЃС‚РєРё РЅРѕРІРѕР№  РєРЅРёРіРё РЅР°Р¶РјРёС‚Рµ 2 " << endl;
+	//cout << "Р”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ 3 " << endl;
 	int num = 0;
 	cin >> num;
 	switch (num)
@@ -189,7 +189,7 @@ void formatting(){
 		break;
 	//case 3:menu();
 	//	break;
-	default:cout << "Таой команды нет поробуйте ещё" << endl;
+	default:cout << "РўР°РѕР№ РєРѕРјР°РЅРґС‹ РЅРµС‚ РїРѕСЂРѕР±СѓР№С‚Рµ РµС‰С‘" << endl;
 		formatting();
 		break;
 	}
@@ -210,14 +210,14 @@ int menu()
 		
 	
 		cout << "____________________________________________________________________________" << endl;
-		cout << "|                  Выберете манипуляцию с телефонной книгой                |" << endl;
-		cout << "|   1) Нажмите 1 для отоброжения  Readme.md                                |" << endl;
-		cout << "|   2) Нажмите 2 для вывода имеющейся информации  телефонной книги         |" << endl;
-		cout << "|   3) Нажмите 3 для созданния пустой книги (нужна начальная инициализация)|" << endl;
-		cout << "|   4) Нажмите 4 для добавления информации в имеющиюся книгу               |" << endl;
-		cout << "|   5) Нажмите 5 для форматирования выбранной книги                        |" << endl;
-		cout << "|   6) Нажмите 6 для вывода информации в созданной вами функции            |" << endl;
-		cout << "|   7) Нажмите 7 для выхода                                                |" << endl;
+		cout << "|                  Р’С‹Р±РµСЂРµС‚Рµ РјР°РЅРёРїСѓР»СЏС†РёСЋ СЃ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРѕР№                |" << endl;
+		cout << "|   1) РќР°Р¶РјРёС‚Рµ 1 РґР»СЏ РѕС‚РѕР±СЂРѕР¶РµРЅРёСЏ  Readme.md                                |" << endl;
+		cout << "|   2) РќР°Р¶РјРёС‚Рµ 2 РґР»СЏ РІС‹РІРѕРґР° РёРјРµСЋС‰РµР№СЃСЏ РёРЅС„РѕСЂРјР°С†РёРё  С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё         |" << endl;
+		cout << "|   3) РќР°Р¶РјРёС‚Рµ 3 РґР»СЏ СЃРѕР·РґР°РЅРЅРёСЏ РїСѓСЃС‚РѕР№ РєРЅРёРіРё (РЅСѓР¶РЅР° РЅР°С‡Р°Р»СЊРЅР°СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ)|" << endl;
+		cout << "|   4) РќР°Р¶РјРёС‚Рµ 4 РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё РІ РёРјРµСЋС‰РёСЋСЃСЏ РєРЅРёРіСѓ               |" << endl;
+		cout << "|   5) РќР°Р¶РјРёС‚Рµ 5 РґР»СЏ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ РІС‹Р±СЂР°РЅРЅРѕР№ РєРЅРёРіРё                        |" << endl;
+		cout << "|   6) РќР°Р¶РјРёС‚Рµ 6 РґР»СЏ РІС‹РІРѕРґР° РёРЅС„РѕСЂРјР°С†РёРё РІ СЃРѕР·РґР°РЅРЅРѕР№ РІР°РјРё С„СѓРЅРєС†РёРё            |" << endl;
+		cout << "|   7) РќР°Р¶РјРёС‚Рµ 7 РґР»СЏ РІС‹С…РѕРґР°                                                |" << endl;
 		cout << "|__________________________________________________________________________|" << endl;
 		cin >> num;
 
@@ -238,7 +238,7 @@ int menu()
 			break;
 		case 7:return 0;
 			
-		default:cout << "Таой команды нет поробуйте ещё" << endl;
+		default:cout << "РўР°РѕР№ РєРѕРјР°РЅРґС‹ РЅРµС‚ РїРѕСЂРѕР±СѓР№С‚Рµ РµС‰С‘" << endl;
 			menu();
 			break;
 		}
