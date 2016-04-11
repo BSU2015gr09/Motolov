@@ -7,14 +7,16 @@
 #include <Windows.h>
 using namespace std;
 const int N = 10;
-struct data{
+struct data
+{
 	char *number;
 	char *name;
 	char *surname;
 }telephonebook[N];
 
 
-void displaydefault(){
+void displaydefault()
+{
 	char buff[50];
 	ifstream fin("default.txt");
 	if (!fin.is_open()) // если файл не открыт
@@ -23,7 +25,8 @@ void displaydefault(){
 	}// сообщить об этом
 	else
 	{
-		for (int i = 0; i < N; i++){
+		for (int i = 0; i < N; i++)
+		{
 			if (i == 0){
 
 				cout << "Номер"  << "           Имя"  << "     Фамилия" << endl;
@@ -40,7 +43,8 @@ void displaydefault(){
 		fin.close(); // закрываем файл
 	}
 }
-void displayset(){
+void displayset()
+{
 	char buff[50];
 	ifstream fin("set.txt");
 	if (!fin.is_open())
@@ -49,11 +53,11 @@ void displayset(){
 	}// сообщить об этом
 	else
 	{
-		for (int i = 0; i < N; i++){
-			if (i == 0){
-
+		for (int i = 0; i < N; i++)
+		{
+			if (i == 0)
+			{
 				cout << "Номер       "<< "Имя       " << "Фамилия" << endl;
-
 				i = 0;
 			}
 			fin >> buff;
@@ -63,30 +67,29 @@ void displayset(){
 			fin >> buff;
 			cout << buff << endl;
 		}
-
 		fin.close();
-
 	}
 }
 
-void createbook(){
+void createbook()
+{
 	/*char name[20];
 	cin >> name;
 	opportynity named file*/
 	ofstream fout("set.txt", ios_base::app); // открываем файл для добавления информации к концу файла
 	int num = 0;
-
-	for (int i = 0; i < 1; i++){
+	for (int i = 0; i < 1; i++)
+	{
 		cout << "ВВедите телефонный номер/n";
-
 		char tmp[255];
 		cin >> tmp;
-
-		for (int i = 0; strlen(tmp)>i; i++){
-			if (((int)tmp[i] >= 48) && (((int)tmp[i] <= 57)) || ((int)tmp[i] == 43)){
-
+		for (int i = 0; strlen(tmp)>i; i++)
+		{
+			if (((int)tmp[i] >= 48) && (((int)tmp[i] <= 57)) || ((int)tmp[i] == 43))
+			{
 			}
-			else{
+			else
+			{
 				cout << "ВВодите только цифры" << endl;
 				createbook();
 			}
@@ -114,22 +117,22 @@ void createbook(){
 	delete telephonebook[0].number;
 	
 }
-void addinfo(){
-
+void addinfo()
+{
 	ofstream fout("default.txt", ios_base::app); // открываем файл для добавления информации к концу файла
-
 	int num = 0;
-
-	for (int i = 0; i < 1; i++){
+	for (int i = 0; i < 1; i++)
+	{
 		cout << "ВВедите телефонный номер/n";
 		char tmp[255];
 		cin >> tmp;
-
-		for (int i = 0; strlen(tmp)>i; i++){
-			if (((((int)tmp[i]) >= 48) && (((int)tmp[i] <= 57))) || ((int)tmp[i] == 43)){
-
+		for (int i = 0; strlen(tmp)>i; i++)
+		{
+			if (((((int)tmp[i]) >= 48) && (((int)tmp[i] <= 57))) || ((int)tmp[i] == 43))
+			{
 			}
-			else{
+			else
+			{
 				cout << "ВВодите только цифры" << endl;
 				createbook();
 			}
@@ -151,7 +154,6 @@ void addinfo(){
 		strcat(telephonebook[i].surname, " ");
 		fout << telephonebook[i].surname;
 	}
-	
 		delete telephonebook[0].surname;
 		delete telephonebook[0].name;
 		delete telephonebook[0].number;
@@ -159,7 +161,8 @@ void addinfo(){
 	//fout.close();
 
 }
-void firstformatting(){
+void firstformatting()
+{
 	ofstream fout("default.txt", ios_base::trunc);
 	if (!fout.is_open())
 	{
@@ -167,7 +170,8 @@ void firstformatting(){
 		//menu();
 	}
 }
-void secondformatting(){
+void secondformatting()
+{
 	ofstream fout("set.txt", ios_base::trunc);
 	if (!fout.is_open())
 	{
@@ -175,7 +179,8 @@ void secondformatting(){
 		//menu();
 	}
 }
-void formatting(){
+void formatting()
+{
 	cout << "Для очистки изначальной книги нажмите 1 " << endl;
 	cout << "Для очистки новой  книги нажмите 2 " << endl;
 	//cout << "Для возврата в меню нажмите 3 " << endl;
@@ -195,7 +200,8 @@ void formatting(){
 	}
 
 }
-void readmemd(){
+void readmemd()
+{
 	char buff[200];
 	ifstream fin("Readme.txt");
 	fin.getline(buff, 200);
@@ -205,10 +211,9 @@ void readmemd(){
 }
 int menu()
 {
-	while (2){
+	while (2)
+	{
 		int num;
-		
-	
 		cout << "____________________________________________________________________________" << endl;
 		cout << "|                  Выберете манипуляцию с телефонной книгой                |" << endl;
 		cout << "|   1) Нажмите 1 для отоброжения  Readme.md                                |" << endl;
@@ -220,10 +225,8 @@ int menu()
 		cout << "|   7) Нажмите 7 для выхода                                                |" << endl;
 		cout << "|__________________________________________________________________________|" << endl;
 		cin >> num;
-
 		switch (num)
 		{
-
 		case 1: readmemd();
 			break;
 		case 2:displaydefault();
@@ -237,14 +240,14 @@ int menu()
 		case 6:displayset();
 			break;
 		case 7:return 0;
-			
 		default:cout << "Таой команды нет поробуйте ещё" << endl;
 			menu();
 			break;
 		}
 	}
 }
-int main(){
+int main()
+{
 	setlocale(LC_ALL, "rus");
 	SetConsoleCP(1251);        
 	SetConsoleOutputCP(1251);
